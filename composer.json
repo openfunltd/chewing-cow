@@ -14,5 +14,9 @@
             "email": "tmonk.hsieh@tmonk.tw"
         }
     ],
+    "require": {
+      "php": ">=8.0"
+    },
+    "minimum-stability": "dev",
     "require": {}
 }
