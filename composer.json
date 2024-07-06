@@ -14,11 +14,10 @@
             "email": "tmonk.hsieh@tmonk.tw"
         }
     ],
-    "require": {
-        "php": ">=8.0"
-    },
     "config": {
         "sort-packages": true
     },
-    "require": {}
+    "require": {
+        "php": ">=8.0"
+    }
 }
