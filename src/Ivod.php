@@ -38,16 +38,16 @@ class Ivod {
         $subjects = [];
         $last_index = 0;
         for ($order = 1; $order <= 9999; $order++) {
-            echo "order : $order \n";
+            $idx = ZhNumConverter::getZhNum($order + 1);
+            $last_idx = ZhNumConverter::getZhNum($order);
             try {
-                $current_idx_offset = mb_strlen(ZhNumConverter::getZhNum($order + 1));
+                $current_idx_offset = mb_strlen($idx);
             } catch (\Exception $e) {
                 // zh index 超出 ZhNumConverter 支援
                 return null;
             }
-            $last_idx_offset = mb_strlen(ZhNumConverter::getZhNum($order)) + 1;
-            $current_index = mb_strpos($reason_raw, ZhNumConverter::getZhNum($order + 1));
-            echo "current_index: $current_index \n";
+            $last_idx_offset = mb_strlen($last_idx) + 1;
+            $current_index = mb_strpos($reason_raw, $idx);
 
             // current_index 應該要是最上層索引編號的位置
             // 但有時會遇到「第十六條之『二、』」的「二、」被認為是索引的誤判
