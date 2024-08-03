@@ -29,7 +29,7 @@ class ZhNumConverter {
         if (mb_strpos($output, '一十') == 0) {
             $output = preg_replace('/一十/', '十', $output);
         }
-        echo "$output\n";
+        return $output;
     }
 
     private static $zh_units = ['千', '百', '十', ''];
